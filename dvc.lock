@@ -56,3 +56,32 @@ stages:
     - path: model.pkl
       md5: 581d8b655658f7883977691e769883f8
       size: 3353978
+  evaluate:
+    cmd: python3 src/evaluate.py model.pkl data/features
+    deps:
+    - path: data/features
+      md5: f8f5cbc3188008a7542d02d63054d9d2.dir
+      size: 1556290
+      nfiles: 2
+    - path: model.pkl
+      md5: 581d8b655658f7883977691e769883f8
+      size: 3353978
+    - path: src/evaluate.py
+      md5: 44e714021a65edf881b1716e791d7f59
+      size: 2346
+    outs:
+    - path: evaluation.json
+      md5: c53c6e7a2b5e711bff8f5e40f2c036b9
+      size: 71
+    - path: evaluation/importance.png
+      md5: 2d372e2c48764b6b424f313857aed6ad
+      size: 29758
+    - path: evaluation/plots/confusion_matrix.json
+      md5: 3d4b3f76e0e1edf76c538766c5120f39
+      size: 122246
+    - path: evaluation/plots/precision_recall.json
+      md5: f69b9deb93affb03b3b3e7e775748c24
+      size: 150566
+    - path: evaluation/plots/roc.json
+      md5: 1ce8888ddba1cc0c1fe87a2e43f544a5
+      size: 47944
